@@ -1,0 +1,15 @@
+Nama		Jumlah 	 Harga satuan
+=================================
+Ayam Geprek 	 1 	 21000
+Ayam Goreng 	 0 	 17000
+Udang Goreng 	 1 	 19000
+Cumi Goreng 	 2 	 20000
+Ayam Bakar 	 0 	 25000
+=================================
+total         : 80000
+ongkir        : 15000
+=================================
+diskon        : 12000
+diskon ongkir : 5000
+=======================
+bayar         : 12
