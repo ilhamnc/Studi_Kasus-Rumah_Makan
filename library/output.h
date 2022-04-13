@@ -1,44 +1,36 @@
 using namespace std;
 
-class output{
+class Output {
 	public :
-		void cetak (){
-			laprak.open("../dummy/out_proses.txt");
-			int data[11];
-			for(int i=1;i<=11;i++){
-				laprak>>data[i];
-			}
-			laprak.close();
-			
-			jarak = data[6];
-			ongkir = data[7];
-			total = data[8];
-			diskon = data[9];
-			diskon_ongkir = data[10];
-			bayar = data[11];
-			
-			file.open("../dummy/out_output.txt");
-			file<<"Nama\t\tJumlah \t Harga satuan"<<endl;
-			file<<"================================="<<endl;
-			file<<"Ayam Geprek \t "<<data[1]<<" \t 21000"<<endl;
-			file<<"Ayam Goreng \t "<<data[2]<<" \t 17000"<<endl;
-			file<<"Udang Goreng \t "<<data[3]<<" \t 19000"<<endl;
-			file<<"Cumi Goreng \t "<<data[4]<<" \t 20000"<<endl;
-			file<<"Ayam Bakar \t "<<data[5]<<" \t 25000"<<endl;	
-			file<<"================================="<<endl;
-			file<<"total         : "<<total<<endl;
-			file<<"ongkir        : "<<ongkir<<endl;
-			file<<"================================="<<endl;
-			file<<"diskon        : "<<diskon<<endl;
-			file<<"diskon ongkir : "<<diskon_ongkir<<endl;
-			file<<"======================="<<endl;
-			file<<"bayar         : "<<bayar;
-		}
-		
+	void getData(){
+      input.open("../dummy/out_input.txt");
+      input>>jumlah_bulan;
+      input.close();
+      jumlah_bulan = jumlah_bulan + 2;
+    
+      proses.open("../dummy/out_proses.txt");
+      proses>>total_out;
+      proses>>total_save;
+      int out[25];
+      for(int i = 3; i <= jumlah_bulan; i++) {
+        proses>>out[i];
+      }
+      proses.close(); 
+	}	
+  void hasil() {
+    file.open("../dummy/out_output.txt");
+    file<<"Pengeluaran Perbulan"<<endl;
+    for(int i = 3; i <= jumlah_bulan; i++) {
+     file<<"bulan "<<i-2<<" "<<out[i]<<endl;
+    }
+    file<<"==================================="<<endl;
+    file<<"Total Pengeluaran : "<<total_out<<endl;
+    file<<"Total Pengeluaran : "<<total_save<<endl;
+  }
 	private :
-		ofstream file;
-		ifstream laprak;
-		float diskon, total;
-		int jarak, ongkir, diskon_ongkir, bayar;
+    ifstream input;
+	ifstream proses;
+    ofstream file;
+    int jumlah_bulan, total_out, total_save;
+    int out[25];
 };
-

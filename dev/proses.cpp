@@ -7,5 +7,6 @@ int main() {
 	Proses proses;
 	proses.getData();
 	proses.hasil();	
+  
 	return 0;
 }

@@ -6,14 +6,16 @@
 using namespace std;
 
 int main() {
-	Input input;
-	input.menu();
-	
-	Proses proses;
+  Input input;
+  input.menu();
+
+  Proses proses;
 	proses.getData();
 	proses.hasil();
-	
-	output out;
-	out.cetak();
-	return 0;
+  
+  Output output;
+	output.getData();
+	output.hasil();
+
+  return 0;
 }

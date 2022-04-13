@@ -3,10 +3,10 @@
 #include "../library/output.h"
 using namespace std;
 
-int main(){
-	output out;
-	out.cetak();
-	
+int main() {
+	Output output;
+	output.getData();
+	output.hasil();	
+  
 	return 0;
 }
-
